@@ -8,7 +8,7 @@ import javax.validation.constraints.*
 @Entity
 @Table(name = "rental")
 
-data class Rental(
+class Rental(
 
 	// rental_date
 	@Column(name="rental_date", nullable=false)

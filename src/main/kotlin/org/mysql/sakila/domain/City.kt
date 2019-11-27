@@ -8,7 +8,7 @@ import javax.validation.constraints.*
 @Entity
 @Table(name = "city")
 
-data class City(
+class City(
 	// city
 	@Column(name="city", length=50, nullable=false)
 	val city: String,

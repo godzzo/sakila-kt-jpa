@@ -8,7 +8,7 @@ import javax.validation.constraints.*
 @Entity
 @Table(name = "film_category")
 @IdClass(FilmCategoryId::class)
-data class FilmCategory(
+class FilmCategory(
 
 	// last_update
 	@Column(name="last_update", nullable=false)

@@ -9,7 +9,7 @@ import javax.validation.constraints.*
 @Entity
 @Table(name = "film")
 
-data class Film(
+class Film(
 
 	// title
 	@Column(name="title", length=255, nullable=false)

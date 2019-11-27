@@ -7,7 +7,7 @@ import javax.validation.constraints.*
 
 @Entity
 @Table(name = "country")
-data class Country(
+class Country(
 
 	// country
 	@NotBlank

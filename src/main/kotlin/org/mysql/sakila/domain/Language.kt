@@ -8,7 +8,7 @@ import javax.validation.constraints.*
 @Entity
 @Table(name = "language")
 
-data class Language(
+class Language(
 
 	// name
 	@Column(name="name", length=20, nullable=false)

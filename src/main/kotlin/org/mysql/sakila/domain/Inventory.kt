@@ -8,7 +8,7 @@ import javax.validation.constraints.*
 @Entity
 @Table(name = "inventory")
 
-data class Inventory(
+class Inventory(
 
 	// last_update
 	@Column(name="last_update", nullable=false)

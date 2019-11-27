@@ -10,7 +10,7 @@ import javax.validation.constraints.*
 @Entity
 @Table(name = "customer")
 
-data class Customer(
+class Customer(
 
 	// first_name
 	@Column(name="first_name", length=45, nullable=false)
