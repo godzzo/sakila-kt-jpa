@@ -30,7 +30,7 @@ class CityController(
         log.info("CityController INITIALIZED...");
     }
 
-    @RequestMapping(value = ["/custom-city"], method = arrayOf(RequestMethod.GET))
+    @RequestMapping(value = ["/api/cities/advanced"], method = arrayOf(RequestMethod.GET))
     fun cities(pageable: Pageable,
                 assembler: PersistentEntityResourceAssembler) : ResponseEntity<CollectionModel<PersistentEntityResource>> {
 
