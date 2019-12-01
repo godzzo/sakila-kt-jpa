@@ -18,7 +18,6 @@ class ApplicationTests {
 	val actorRepository: ActorRepository? = null
 
 	@Test
-	@Transactional
 	fun testStores() {
 		val stores = storeRepository?.findAll()
 
@@ -28,6 +27,13 @@ class ApplicationTests {
 			println("id: ${it.id}")
 //			println("manager: ${it.managerStaff.firstName} ${it.managerStaff.lastName}")
 		}
+	}
+
+	@Test
+	fun testStoreById() {
+		val store = storeRepository?.findByExId(1L);
+
+		println("${store?.get(0)?.id}")
 	}
 
 	@Test

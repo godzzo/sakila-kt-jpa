@@ -21,7 +21,7 @@ class City(
 	@Column(name="summer_note", nullable=false)
 	val summerNote: String,
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "country_id")
 	val country: Country,
 
