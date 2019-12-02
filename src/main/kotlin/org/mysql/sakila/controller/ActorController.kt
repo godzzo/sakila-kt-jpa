@@ -9,6 +9,7 @@ import org.springframework.data.jpa.domain.Specification
 import org.springframework.data.rest.webmvc.PersistentEntityResource
 import org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler
 import org.springframework.data.rest.webmvc.RepositoryRestController
+import org.springframework.data.rest.webmvc.RootResourceInformation
 import org.springframework.hateoas.CollectionModel
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -30,8 +31,12 @@ class ActorController(
         log.info("ActorController INITIALIZED...");
     }
 
-    @RequestMapping(value = ["/api/actors/advanced"], method = arrayOf(RequestMethod.GET))
-    fun cities(@RequestParam("search") search : String,
+    // private static final String BASE_MAPPING = "/{repository}/{id}/{property}";
+
+    // @QuerydslPredicate(root = [Actor::class.java])
+    @RequestMapping(value = ["/{repository}/advanced"], method = arrayOf(RequestMethod.GET))
+    fun advanced(@RequestParam("search") search : String,
+               resourceInformation : RootResourceInformation,
                pageable: Pageable,
                assembler: PersistentEntityResourceAssembler) : ResponseEntity<CollectionModel<PersistentEntityResource>> {
 
