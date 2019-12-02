@@ -1,7 +1,5 @@
 package org.mysql.sakila.controller
 
-import org.mysql.sakila.Application
-import org.mysql.sakila.domain.City
 import org.mysql.sakila.repository.CityRepository
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
@@ -9,10 +7,7 @@ import org.springframework.data.domain.Pageable
 import org.springframework.data.rest.webmvc.PersistentEntityResource
 import org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler
 import org.springframework.data.rest.webmvc.RepositoryRestController
-import org.springframework.data.web.PagedResourcesAssembler
 import org.springframework.hateoas.CollectionModel
-import org.springframework.hateoas.EntityModel
-import org.springframework.hateoas.PagedModel
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller

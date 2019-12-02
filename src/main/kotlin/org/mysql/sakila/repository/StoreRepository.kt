@@ -14,12 +14,10 @@ import javax.persistence.criteria.Predicate
 
 @Repository
 interface StoreRepository : JpaRepository<Store, Long>, StoreRepositoryCustom {
-    @RestResource(rel = "ex-id", path="ex-id")
     override fun findByExId(@Param("id") id: Long): MutableList<Store>
 }
 
 interface StoreRepositoryCustom {
-    @RestResource(rel = "ex-id", path="ex-id")
     fun findByExId(@Param("id") id: Long): MutableList<Store>
 }
 
@@ -28,7 +26,6 @@ class StoreRepositoryImpl : StoreRepositoryCustom {
     @Autowired
     val entityManager: EntityManager? = null
 
-    @RestResource(rel = "ex-id", path="ex-id")
     override fun findByExId(id: Long): MutableList<Store> {
         val em = entityManager;
 
