@@ -2,6 +2,7 @@ package org.mysql.sakila.controller
 
 import org.mysql.sakila.domain.Actor
 import org.mysql.sakila.repository.ActorRepository
+import org.mysql.sakila.util.FilterHelper
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Pageable
@@ -45,8 +46,12 @@ class ActorController(
         Specification { root, query, cb ->
             val predicates = mutableListOf<Predicate>()
 
-            predicates.add(cb.like(root.get<String>("firstName"), "${search}%"))
-            predicates.add(cb.like(root.get<String>("lastName"), "${search}%"))
+            // predicates.add(cb.like(root.get<String>("firstName"), "${search}%"))
+            // predicates.add(cb.like(root.get<String>("lastName"), "${search}%"))
+
+            FilterHelper.like(root, query, cb, predicates, "firstName", search);
+            FilterHelper.like(root, query, cb, predicates, "lastName", search);
+
 
             cb.or(*predicates.toTypedArray())
         }
